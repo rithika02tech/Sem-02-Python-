@@ -1,0 +1,11 @@
+
+element=list(map(int,input("eneter the element").split()))
+
+
+
+for i in range(len(element)):   
+    ind = element.index(element[i])  
+    if ind % 2 == 0:  
+        print(f"even index {ind} value: {element[i]}")
+    else:
+        print(f"odd index {ind} value: {element[i]}")

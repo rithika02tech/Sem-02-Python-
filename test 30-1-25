@@ -1,0 +1,56 @@
+#1
+col = int(input("Enter the number of columns: "))
+
+for i in range(1, col + 1):
+    
+    for j in range(i):
+        print(i, end=" ")
+        i += (col - j - 1)  
+    print()
+
+#2
+
+
+a=list(map(int,input().split()))
+n=len(a)
+if n==0:
+    print("empty")
+else:
+    m=a[0]
+    count=1
+    for num in a[1:]:
+        if num==m:
+            count+=1
+        else:
+            count-=1
+        if count==0:
+            m=num
+            count=1
+            
+print(m)
+
+#3
+
+class Student:
+    def __init__(self, name, roll, marks):
+        self.name = name
+        self.roll = roll
+        self.marks = marks
+
+    def avg_marks(self):
+      
+        return sum(self.marks.values()) / len(self.marks)
+
+
+students = [
+    Student("ray", 101, { "English": 85, "Ai": 88}),
+    Student("nick", 102, { "English": 75, "Ai": 78}),]
+    
+topper = students[0] 
+
+for student in students:
+    if student.avg_marks() > topper.avg_marks():
+        topper = student
+
+print(f"Topper: {topper.name}, Roll No: {topper.roll}, Average Marks: {topper.avg_marks():.2f}")
+
